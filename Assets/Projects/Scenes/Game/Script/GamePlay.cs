@@ -14,7 +14,7 @@ public class GamePlay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButton(0) && !isMouseOverUI())
+        if(Input.GetMouseButtonDown(0) && !isMouseOverUI())
         {
             Manager.Load(ScorePopupController.SCOREPOPUP_SCENE_NAME, "ScorePopup");
         }
@@ -22,6 +22,6 @@ public class GamePlay : MonoBehaviour
 
     private bool isMouseOverUI()
     {
-        return EventSystem.current.IsPointerOverGameObject();    
+        return EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId);    
     }
 }

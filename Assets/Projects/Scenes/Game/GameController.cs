@@ -15,5 +15,6 @@ public class GameController : Controller
     public void OnSettingsButtonTap()
     {
         Manager.Add(PausePopupController.PAUSEPOPUP_SCENE_NAME, "PausePopup");
+        Debug.Log("?");
     }
 }
